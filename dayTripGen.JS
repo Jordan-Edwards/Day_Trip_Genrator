@@ -7,7 +7,7 @@ function destination(){
         return randomLocation;
 }
 
-function destination(){
+function restaurant(){
 
     let restaurantArr = ["Rasin Canes", "Taco Bell", "Wendy's", "Burger King", "Arby's"];
     let randomRestaurant = restaurantArray[Math.floor(Math.random()*restaurantArr.length)];
@@ -15,7 +15,7 @@ function destination(){
 }
 
 
-function destination(){
+function transporation(){
 
     let transporationArr = ["Car", "Plane", "Bluehound"];
     let randomTransportation = transporationArr[Math.floor(Math.random()*transporationArr.length)];
@@ -23,7 +23,7 @@ function destination(){
 }
 
 
-function destination(){
+function entertainment(){
 
     let entertainmentArr = ["Hiking", "Mall", "City Tour", "Museum", "Casino"];
     let randomEntertainment = entertainmentArr[Math.floor(Math.random()*entertainmentArr.length)];
