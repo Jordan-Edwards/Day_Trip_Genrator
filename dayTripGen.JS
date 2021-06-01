@@ -29,3 +29,13 @@ function entertainment(){
     let randomEntertainment = entertainmentArr[Math.floor(Math.random()*entertainmentArr.length)];
         return randomEntertainment;
 }
+
+
+function userValue() {
+    let choice = parseInt(prompt("Please enter 0 if you are happy with your trip! Enter 1 to change destination, 2 for restaurant, 3 for transportation, or 4 for entertainment. Please press 5 for an entire new trip!"));
+        return choice
+}
+
+
+function userTrip(){
+    alert("Your randomly generated day trip will be in " + tripDestination + ", you'll eat at " + tripRestaurant + ", you'll arrive by " + tripTransporation + ", and you will go to a " + tripEntertainment + ".");
