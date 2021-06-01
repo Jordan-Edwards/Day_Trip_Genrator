@@ -39,3 +39,21 @@ function userValue() {
 
 function userTrip(){
     alert("Your randomly generated day trip will be in " + tripDestination + ", you'll eat at " + tripRestaurant + ", you'll arrive by " + tripTransporation + ", and you will go to a " + tripEntertainment + ".");
+}
+
+
+let dayTripArr = [destination(), restaurant(), transportation(), entertainment()];
+let tripDestination = dayTripArr[0];
+let tripRestaurant = dayTripArr[1];
+let tripTransporation = dayTripArr[2];
+let tripEntertainment = dayTripArr[3];
+
+
+
+function reroll() {
+    tripDestination = destination();
+    tripRestaurant = restaurant();
+    tripTransporation = transportation();
+    tripEntertainment = entertainment();
+    return tripDestination, tripRestaurant, tripTransporation, tripEntertainment;
+}
