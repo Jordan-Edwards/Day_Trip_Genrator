@@ -1,54 +1,50 @@
 "use strict";
+//Features: 
+//(5 points): As a developer, I want to make at least three commits.
+//(5 points): As a user, I want a destination to be randomly selected for my day trip.
+//(5 points): As a user, I want a restaurant to be randomly selected for my day trip.
+//(5 points): As a user, I want a mode of transportation to be randomly selected for my day trip.
+//(5 points): As a user, I want a form of entertainment to be randomly selected for my day trip.
+//(15 points): As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form of entertainment if I don’t like one or more of those things.
+//(10 points): As a user, I want to be able to confirm that my day trip is “complete” once I like all of the random selections.
+//(10 points): As a user, I want to display my completed trip in the console.
+//(5 points): As a developer, I want all of my functions to have a Single Responsibility. Remember, each function should do just one thing!
 
-function destination(){
+//Research JS Random Generator and look out for other useful methods
+function destination() {
 
-    let locationArr = ["Mississippi", "Ney York", "Florida", "Texas", "Nevada"];
-    let randomLocation = locationArr[Math.floor(Math.random()*locationArr.length)];
-        return randomLocation;
+    let locationArray = ["Mississippi", "Ney York", "Florida", "Texas", "Nevada"];
+    let randomLocation = locationArray[Math.floor(Math.random()*locationArray.length)];
+    return randomLocation;
 }
 
-function restaurant(){
+function restaurant() {
 
-    let restaurantArr = ["Rasin Canes", "Taco Bell", "Wendy's", "Burger King", "Arby's"];
-    let randomRestaurant = restaurantArray[Math.floor(Math.random()*restaurantArr.length)];
-        return randomRestaurant;
+    let restaurantArray = ["Rasin Canes", "Taco Bell", "Wendy's", "Burger King", "Arby's"];
+    let randomRestaurant = restaurantArray[Math.floor(Math.random()*restaurantArray.length)];
+    return randomRestaurant;
 }
 
+function transportation() {
 
-function transporation(){
-
-    let transporationArr = ["Car", "Plane", "Bluehound"];
-    let randomTransportation = transporationArr[Math.floor(Math.random()*transporationArr.length)];
-        return randomTransportation;
+    let transporationArray = ["Car", "Plane", "Bluehound"];
+    let randomTransportation = transporationArray[Math.floor(Math.random()*transporationArray.length)];
+    return randomTransportation;
 }
 
+function entertainment() {
 
-function entertainment(){
-
-    let entertainmentArr = ["Hiking", "Mall", "City Tour", "Museum", "Casino"];
-    let randomEntertainment = entertainmentArr[Math.floor(Math.random()*entertainmentArr.length)];
-        return randomEntertainment;
+    let entertainmentArray = ["Nature Trail", "Mall", "City Tour", "Museum", "Casino"];
+    let randomEntertainment = entertainmentArray[Math.floor(Math.random()*entertainmentArray.length)];
+    return randomEntertainment;
 }
 
-
-function userValue() {
-    let choice = parseInt(prompt("Please enter 0 if you are happy with your trip! Enter 1 to change destination, 2 for restaurant, 3 for transportation, or 4 for entertainment. Please press 5 for an entire new trip!"));
-        return choice
-}
-
-
-function userTrip(){
-    alert("Your randomly generated day trip will be in " + tripDestination + ", you'll eat at " + tripRestaurant + ", you'll arrive by " + tripTransporation + ", and you will go to a " + tripEntertainment + ".");
-}
-
-
-let dayTripArr = [destination(), restaurant(), transportation(), entertainment()];
-let tripDestination = dayTripArr[0];
-let tripRestaurant = dayTripArr[1];
-let tripTransporation = dayTripArr[2];
-let tripEntertainment = dayTripArr[3];
-
-
+//Found parseInt() and used it for Final Aproach
+let dayTripArray = [destination(), restaurant(), transportation(), entertainment()];
+let tripDestination = dayTripArray[0];
+let tripRestaurant = dayTripArray[1];
+let tripTransporation = dayTripArray[2];
+let tripEntertainment = dayTripArray[3];
 
 function reroll() {
     tripDestination = destination();
@@ -56,4 +52,50 @@ function reroll() {
     tripTransporation = transportation();
     tripEntertainment = entertainment();
     return tripDestination, tripRestaurant, tripTransporation, tripEntertainment;
+}
+function userTrip(){
+    alert("Your trip will be in " + tripDestination + ", you'll eat at " + tripRestaurant + ", you'll arrive by " + tripTransporation + ", and you will go to a " + tripEntertainment + ".");
+}
+
+function userValue() {
+   let choice = parseInt(prompt("Please enter 0 if you are happy with your trip! Enter 1 to change destination, 2 for restaurant, 3 for transportation, or 4 for entertainment. Please press 5 for an entire new trip!"));
+    return choice
+}
+
+userTrip();
+
+let userChoice = true
+
+while (userChoice) {
+    let userInput = userValue();
+    
+    if(userInput === 1) {
+        tripDestination = destination();
+        userTrip();
+    }
+    else if(userInput === 2) {
+        tripRestaurant = restaurant();
+        userTrip();
+    }
+    else if(userInput === 3) {
+        tripTransporation = transportation();
+        userTrip();
+    }
+    else if(userInput === 4) {
+        tripEntertainment = entertainment();
+        userTrip();
+    }
+    else if (userInput === 5) {
+        reroll();
+        userTrip();
+    }
+    else if (userInput === 0) {
+        alert("Your day trip is all set!");
+        console.log(tripDestination, " ", tripRestaurant, " ", tripTransporation, " ", tripEntertainment);
+        userChoice = false;
+    }
+    else {
+        console.log("Wrong Choice.");
+    }
+
 }
