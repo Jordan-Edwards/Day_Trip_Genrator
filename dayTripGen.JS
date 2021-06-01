@@ -1,29 +1,31 @@
 "use strict";
 
-{
+function destination(){
 
-    let locationArray = ["Mississippi", "Ney York", "Florida", "Texas", "Nevada"];
-    let randomLocation = locationArray[Math.floor(Math.random()*locationArray.length)];
-    return randomLocation;
+    let locationArr = ["Mississippi", "Ney York", "Florida", "Texas", "Nevada"];
+    let randomLocation = locationArr[Math.floor(Math.random()*locationArr.length)];
+        return randomLocation;
 }
 
-{
+function destination(){
 
-    let restaurantArray = ["Rasin Canes", "Taco Bell", "Wendy's", "Burger King", "Arby's"];
-    let randomRestaurant = restaurantArray[Math.floor(Math.random()*restaurantArray.length)];
-    return randomRestaurant;
+    let restaurantArr = ["Rasin Canes", "Taco Bell", "Wendy's", "Burger King", "Arby's"];
+    let randomRestaurant = restaurantArray[Math.floor(Math.random()*restaurantArr.length)];
+        return randomRestaurant;
 }
 
 
-{
+function destination(){
 
-    let transporationArray = ["Car", "Plane", "Bluehound"];
-    let randomTransportation = transporationArray[Math.floor(Math.random()*transporationArray.length)];
-    return randomTransportation;
+    let transporationArr = ["Car", "Plane", "Bluehound"];
+    let randomTransportation = transporationArr[Math.floor(Math.random()*transporationArr.length)];
+        return randomTransportation;
 }
-{
 
-    let entertainmentArray = ["Hiking", "Mall", "City Tour", "Museum", "Casino"];
-    let randomEntertainment = entertainmentArray[Math.floor(Math.random()*entertainmentArray.length)];
-    return randomEntertainment;
+
+function destination(){
+
+    let entertainmentArr = ["Hiking", "Mall", "City Tour", "Museum", "Casino"];
+    let randomEntertainment = entertainmentArr[Math.floor(Math.random()*entertainmentArr.length)];
+        return randomEntertainment;
 }
